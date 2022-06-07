@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-news-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kube-news-pod
+  template:
+    metadata:
+      labels:
+        app: kube-news-pod
+    spec:
+      containers:
+        - name: kube-news-container
+          image: kube-news:1.0 # Não existe esta imagem dockerhub.com
