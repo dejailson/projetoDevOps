@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Calculadora-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: calculadora-pod
+  template:
+    metadata:
+      labels:
+        app: calculadora-pod
+    spec:
+      containers:
+        - name: calculadora-container
+          image: calculadora-web:1.0 # Não existe esta imagem dockerhub.com
